@@ -8,7 +8,7 @@ export async function login(page) {
     throw new Error("Missing LOGIN_EMAIL or LOGIN_PASSWORD in .env");
   }
 
-  await page.goto('https://uat.ncuindia.edu/login', {
+  await page.goto('https://mycampus.ncuindia.edu/', {
     waitUntil: 'networkidle'
   });
 

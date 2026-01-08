@@ -8,7 +8,7 @@ export const SELECTORS = {
   navigation: {
     myLinks: '//*[normalize-space(text())="My Links"]',
     examination: '//*[normalize-space(text())="Examination"]',
-    result: '//*[normalize-space(text())="Result"]'
+    result: '//*[normalize-space(text())="Results"]'
   },
 
   secret: {
