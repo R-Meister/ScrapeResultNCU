@@ -3,6 +3,13 @@ import { login } from './login.js';
 import { navigateToSecretPane } from './navigate.js';
 import { extractSecret } from './extractsecret.js';
 import fs from 'fs';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+function secretAlreadyExists() {
+  return process.env.SECRET_URL && process.env.SECRET_URL.trim().length > 0;
+}
 
 function updateEnv(key, value) {
   let env = fs.readFileSync('.env', 'utf8');
@@ -18,6 +25,12 @@ function updateEnv(key, value) {
 }
 
 (async () => {
+
+  if (secretAlreadyExists()) {
+    console.log('ℹ️ Secret already present — skipping Playwright');
+    return;
+  }
+
   const { browser, page } = await launchBrowser();
 
   try {

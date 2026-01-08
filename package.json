@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node playwright/run.js"
+    "start": "node playwright/run.js && python3 python/fetch_results.py"
   },
   "repository": {
     "type": "git",
