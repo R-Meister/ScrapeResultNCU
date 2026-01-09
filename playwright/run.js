@@ -24,9 +24,8 @@ function updateEnv(key, value) {
   fs.writeFileSync('.env', env);
 }
 
-(async () => {
-
-  if (secretAlreadyExists()) {
+export async function runAuth() {
+  if (secretAlreadyExists() && !process.env.FORCE_LOGIN) {
     console.log('ℹ️ Secret already present — skipping Playwright');
     return;
   }
@@ -46,4 +45,10 @@ function updateEnv(key, value) {
   } finally {
     await browser.close();
   }
-})();
+}
+
+// Allow running directly
+import { fileURLToPath } from 'url';
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  runAuth();
+}

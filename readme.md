@@ -70,11 +70,17 @@ SECRET_URL=
 Run the automation with a single command from the root directory. You must specify the start and end session IDs.
 
 ```bash
+# Basic usage (using credentials from .env)
 npm start -- --start 20 --end 30
+
+# Passing credentials via CLI (overrides .env)
+npm start -- --email "your_email" --password "your_password" --start 20 --end 30
 ```
 
 *   **--start**: The starting session ID (e.g., 20)
 *   **--end**: The ending session ID (e.g., 30)
+*   **--email** (optional): Your university email
+*   **--password** (optional): Your ERP password
 
 ### Session Mapping
 Session numbers are internal identifiers used by the ERP. Below are observed mappings:

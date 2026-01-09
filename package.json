@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node playwright/run.js && python3 python/fetch_results.py"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/R-Meister/ScrapeResultNCU#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
+    "minimist": "^1.2.8",
     "playwright": "^1.57.0"
   }
 }
