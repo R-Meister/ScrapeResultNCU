@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { runAuth } from './playwright/run.js';
 import { spawn } from 'child_process';
 import dotenv from 'dotenv';

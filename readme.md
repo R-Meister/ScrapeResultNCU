@@ -65,22 +65,38 @@ SECRET_URL=
 
 ---
 
+### 5. Setup Custom CLI (Recommended)
+To run the tool conveniently from anywhere in your terminal, link the package:
+```bash
+npm link
+```
+Now you can use the `rs-ncu` command directly!
+
+---
+
 ## Usage
 
-Run the automation with a single command from the root directory. You must specify the start and end session IDs.
-
+### Standard Usage
 ```bash
-# Basic usage (using credentials from .env)
-npm start -- --start 20 --end 30
+rs-ncu --start 20 --end 30
+```
 
-# Passing credentials via CLI (overrides .env)
-npm start -- --email "your_email" --password "your_password" --start 20 --end 30
+### With Credentials (CLI)
+Override `.env` credentials on the fly:
+```bash
+rs-ncu --email "your_email" --password "your_password" --start 20 --end 30
 ```
 
 *   **--start**: The starting session ID (e.g., 20)
 *   **--end**: The ending session ID (e.g., 30)
 *   **--email** (optional): Your university email
 *   **--password** (optional): Your ERP password
+
+### Legacy Usage (via npm)
+You can still run via npm if preferred:
+```bash
+npm start -- --start 20 --end 30
+```
 
 ### Session Mapping
 Session numbers are internal identifiers used by the ERP. Below are observed mappings:
