@@ -14,11 +14,11 @@ export const SELECTORS = {
   },
 
   secret: {
-  downloadDgsLink: '//a[normalize-space(text())="Download DGS"]'
+    downloadDgsLink: '//a[normalize-space(text())="Download DGS"]'
   },
 
   semreg: {
-    backlogPresent: `//*[normalize-space(text())="Backlog Courses']`,
+    backlogPresent: `//*[normalize-space(text())='Backlog Courses']`,
     submit: '//*[normalize-space(text())="Submit"]',
   }
 
