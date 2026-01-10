@@ -10,14 +10,14 @@ const args = minimist(process.argv.slice(2));
 
 async function main() {
     // 1. Handle Credentials
-    if (args.email) {
-        process.env.LOGIN_EMAIL = args.email;
+    if (args.rollno) {
+        process.env.LOGIN_ROLLNO = args.rollno;
     }
     if (args.password) {
         process.env.LOGIN_PASSWORD = args.password;
     }
 
-    if (args.email || args.password) {
+    if (args.rollno || args.password) {
         // If credentials are provided via CLI, force login attempt even if secret exists
         // because the user might be trying to switch accounts or refresh credentials.
         // However, the original runAuth logic skips if secret exists.

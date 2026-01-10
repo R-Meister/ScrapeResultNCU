@@ -84,12 +84,12 @@ rs-ncu --start 20 --end 30
 ### With Credentials (CLI)
 Override `.env` credentials on the fly:
 ```bash
-rs-ncu --email "your_email" --password "your_password" --start 20 --end 30
+rs-ncu --rollno "your_rollno" --password "your_password" --start 20 --end 30
 ```
 
 *   **--start**: The starting session ID (e.g., 20)
 *   **--end**: The ending session ID (e.g., 30)
-*   **--email** (optional): Your university email
+*   **--rollno** (optional): Your university roll number
 *   **--password** (optional): Your ERP password
 
 ### Legacy Usage (via npm)

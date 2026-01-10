@@ -7,6 +7,6 @@ export async function semesterRegistration(page) {
     await page.waitForSelector(`xpath=${SELECTORS.navigation.academic}`);
     await page.click(`xpath=${SELECTORS.navigation.academic}`);
 
-    await page.waitForSelector(`xpath=${SELECTORS.navigation.semesterRegistration}`);
-    await page.click(`xpath=${SELECTORS.navigation.semesterRegistration}`);
+    await page.waitForSelector(`xpath=${SELECTORS.navigation.semester}`);
+    await page.click(`xpath=${SELECTORS.navigation.semester}`);
 }

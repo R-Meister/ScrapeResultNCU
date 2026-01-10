@@ -1,6 +1,6 @@
 export const SELECTORS = {
   login: {
-    emailInput: '//*[@id="email"]',
+    rollnoInput: '//*[@id="email"]',
     passwordInput: '//*[@id="password"]',
     loginButton: '//*[@type="submit"]'
   },

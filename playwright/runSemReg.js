@@ -1,19 +1,40 @@
 import { launchBrowser } from './browser.js';
 import { login } from './login.js';
-import { navigateToSemReg } from './navigateSemReg.js';
+import { semesterRegistration } from './navigateSemReg.js';
 import { SELECTORS } from '../PageObjects/selectors.js';
+import dotenv from 'dotenv';
 
-const { browser, page } = await launchBrowser();
+dotenv.config();
 
-await login(page);
-await navigateToSemReg(page);
+export async function runSemReg() {
+    const { browser, page } = await launchBrowser();
 
-// check if backlog exists
-const backlogCount = await page.locator(SELECTORS.semreg.backlogPresent).count();
+    try {
+        console.log('🔒 Logging in...');
+        await login(page);
 
-if (backlogCount > 0) {
-    console.log('Backlog Courses Present. Please check manually.');
-} else {
-    await page.click(SELECTORS.semreg.submit);
-    console.log('No backlog. Submitted successfully.');
+        console.log('🧭 Navigating to Semester Registration...');
+        await semesterRegistration(page);
+
+        // check if backlog exists
+        const backlogCount = await page.locator(SELECTORS.semreg.backlogPresent).count();
+
+        if (backlogCount > 0) {
+            console.log('⚠️ Backlog Courses Present. Please check manually.');
+        } else {
+            await page.click(`xpath=${SELECTORS.semreg.submit}`);
+            console.log('✅ No backlog. Submitted successfully.');
+        }
+
+    } catch (err) {
+        console.error('❌ Registration failed:', err.message);
+    } finally {
+        await browser.close();
+    }
+}
+
+// Allow running directly
+import { fileURLToPath } from 'url';
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+    runSemReg();
 }
