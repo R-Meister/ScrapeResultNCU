@@ -23,6 +23,7 @@ export async function runSemReg() {
             console.log('⚠️ Backlog Courses Present. Please check manually.');
         } else {
             await page.click(`xpath=${SELECTORS.semreg.submit}`);
+            await page.waitForTimeout(5000)
             console.log('✅ No backlog. Submitted successfully.');
         }
 
