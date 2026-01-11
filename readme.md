@@ -110,8 +110,6 @@ Session numbers are internal identifiers used by the ERP. Below are observed map
 | **Even Sem 2024–2025** | `20` | Confirmed |
 | **Odd Sem 2025–2026** | `23` | Confirmed |
 
-> **Note:** Always verify session IDs via the ERP UI if results do not appear as expected.
-
 ---
 
 ## Troubleshooting
