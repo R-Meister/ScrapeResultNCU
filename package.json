@@ -8,7 +8,8 @@
     "start": "node index.js"
   },
   "bin": {
-    "rs-ncu": "./index.js"
+    "rs-ncu": "./index.js",
+    "sr-ncu": "./sr-ncu.js"
   },
   "repository": {
     "type": "git",
